@@ -26,7 +26,7 @@ model productModel{
   slug  String
   description String
   inventory Float
-  price Decimal
+  price Int
 }
 
 // Necessary for Next auth

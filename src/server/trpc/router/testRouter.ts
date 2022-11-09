@@ -11,11 +11,12 @@ const generateSlugFromName = (name: string) =>
     .replace(/-$/, "");
 
 export const testRouter = router({
-  test: publicProcedure.input(z.string()).query(async ({ input }) => {
-    return "Hello World " + input;
+  products: publicProcedure.query(async () => {
+    const result = await prisma?.productModel.findMany();
+    return result;
   }),
 
-  test_mutate: publicProcedure
+  product_create: publicProcedure
     .input(
       z.object({
         name: z.string(),
