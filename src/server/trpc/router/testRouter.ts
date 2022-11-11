@@ -16,6 +16,20 @@ export const testRouter = router({
     return result;
   }),
 
+  product_delete: publicProcedure
+    .input(
+      z.object({
+        id: z.string(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      await prisma?.productModel.delete({
+        where: {
+          id: input.id,
+        },
+      });
+    }),
+
   product_create: publicProcedure
     .input(
       z.object({

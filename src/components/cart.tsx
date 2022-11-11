@@ -43,10 +43,12 @@ const Cart: FC = ({ toggleCart }) => {
           <span className="empty-message">Your cart is empty</span>
         )}
       </div>
-      <h2 className="fixed right-16">
-        Your total $
-        {cartItems.reduce((total, cartItem) => total + cartItem.price, 0)}
-      </h2>
+      <div className="mt-5 inline-flex items-center rounded-lg border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
+        <h2 className=" text-lg">
+          Your total $
+          {cartItems.reduce((total, cartItem) => total + cartItem.price, 0)}
+        </h2>
+      </div>
     </div>
   );
 };

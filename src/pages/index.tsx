@@ -40,6 +40,7 @@ const Home: NextPage = () => {
                     description={product.description}
                     price={product.price}
                     inventory={product.inventory}
+                    id={product.id}
                   />
                 ))}
             </div>
